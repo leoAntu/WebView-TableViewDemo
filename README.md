@@ -1,5 +1,5 @@
 # WebView-TableViewDemo 
-###主流新闻app详情页中所使用的webview和tableview混合开发技巧
+### 主流新闻app详情页中所使用的webview和tableview混合开发技巧
 如果要实现一个底部带有相关推荐和评论的资讯详情页，很自然会想到WebView和TableView嵌套使用的方案。
 
 这个方案是WebView作为TableView的TableHeaderView或者TableView的一个Cell，然后通过kvo获取webview的contentSize，再更新TableHeaderView的高度，这个方案逻辑上最简单，也最容易实现，而且滑动效果也比较好。
@@ -8,7 +8,7 @@
 
 但是在单纯的使用WebView的时候内存占用不会那么大，WebView会根据自身视口的大小动态渲染HTML内容，不会一次性的渲染素有的HTML内容，此方法不在讨论内。
 
-####主流app新闻详情实现方案
+#### 主流app新闻详情实现方案
 今日头条和网易新闻通过Reveal查看视图结构，整个详情页最外层是ScrollView，WebView和
 TableView都是它的subView，subview的frame都是一个窗口大小。再禁用webview和tableview自身的滑动属性，通过scrollview的滑动去改变它们俩的contentOffsize。这样就可以在滑动的过程中慢慢加载webview中html，避免一次性加载整个html，造成内存暴增，可以使内存一直保存在一个平稳的状态。
 
