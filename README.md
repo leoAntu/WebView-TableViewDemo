@@ -12,6 +12,8 @@
 今日头条和网易新闻通过Reveal查看视图结构，整个详情页最外层是ScrollView，WebView和
 TableView都是它的subView，subview的frame都是一个窗口大小。再禁用webview和tableview自身的滑动属性，通过scrollview的滑动去改变它们俩的contentOffsize。这样就可以在滑动的过程中慢慢加载webview中html，避免一次性加载整个html，造成内存暴增，可以使内存一直保存在一个平稳的状态。
 
+![](https://github.com/leoAntu/LWComment/blob/master/2018-05-31%2015_53_13.gif)
+
 本demo参照此结构仿写：
 
 ```
